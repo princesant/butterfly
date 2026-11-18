@@ -1,0 +1,504 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Spotting Butterflies</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: long-scroll data story — narrow reading column, wide illustrated figures breaking out of it, a flower of families as the centrepiece. Single warm light theme by choice. */
+:root {
+  color-scheme: light;
+  --bg: #f4efe5;
+  --bg-deep: #e7decd;
+  --card: #ffffff;
+  --ink: #28211e;
+  --ink-2: #80766b;
+  --ink-3: #afa39c;
+  --note: #68594f;
+  --coral: #f9564e;
+  --band: rgba(249, 86, 78, .12);
+  --shadow: 0 4px 6px -1px rgba(119, 67, 24, .2), 0 0 4px 1px rgba(160, 102, 53, .1);
+  --shadow-lg: 0 10px 15px 2px rgba(119, 67, 24, .1), 0 0 7px 2px rgba(160, 102, 53, .2);
+  --heading: "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+  --body: "Zilla Slab", "Rockwell", Georgia, serif;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--bg); }
+body {
+  color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.7; margin: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 72px;
+}
+.col { max-width: 62ch; margin: 0 auto; }
+.wide { max-width: 940px; margin: 0 auto; }
+p { margin: 0 0 1.1em; }
+a { color: var(--ink); text-decoration-color: var(--coral); text-underline-offset: 3px; }
+em { font-style: italic; }
+h1, h2, h3 { font-family: var(--heading); margin: 0; text-wrap: balance; }
+
+/* Hero */
+.hero { position: relative; max-width: 1100px; margin: 0 auto; min-height: 560px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-block: 90px 40px; overflow: hidden; }
+.hero svg.flock { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hero h1 { position: relative; font-weight: 300; font-size: clamp(3rem, 9vw, 5.2rem); line-height: 1.08; letter-spacing: .02em; max-width: 8.5ch; }
+.meta { position: relative; margin-top: 64px; font-family: var(--heading); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); display: flex; gap: 18px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.meta svg { width: 14px; height: 12px; }
+.credit { position: relative; margin-top: 18px; font-size: .9rem; color: var(--ink-2); }
+.lead { font-size: 1.12rem; }
+
+/* Parts */
+.part { padding-top: 24px; }
+.eyebrow { font-family: var(--heading); font-weight: 500; font-size: .9rem; letter-spacing: .12em; text-transform: uppercase; color: var(--coral); display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.eyebrow svg { width: 22px; height: 16px; }
+h2 { font-weight: 700; font-size: clamp(1.6rem, 4vw, 1.9rem); line-height: 1.2; letter-spacing: -.02em; margin-bottom: 22px; }
+.divider { display: block; width: 100%; max-width: 640px; height: auto; margin: 56px auto; }
+
+/* Flower figure */
+figure { margin: 36px auto; }
+.flower-wrap { position: relative; }
+#flower { display: block; width: 100%; height: auto; }
+#flower .bf { cursor: pointer; transition: transform .2s ease; transform-box: fill-box; transform-origin: center; }
+#flower .bf:hover { transform: scale(1.12); }
+#flower .bf:focus-visible { outline: none; }
+#flower .bf:focus-visible .ring, #flower .bf.sel .ring { opacity: 1; }
+#flower .ring { opacity: 0; }
+#flower text { font-family: var(--heading); }
+.fig-note { font-size: .85rem; font-style: italic; color: var(--note); text-align: center; max-width: 52ch; margin: 6px auto 0; line-height: 1.5; }
+.picker { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; margin: 4px 0 18px; font-family: var(--heading); font-size: .9rem; color: var(--ink-2); }
+.picker select { font: 500 .95rem var(--heading); color: var(--ink); background: var(--card); border: 1px solid var(--bg-deep); border-radius: 999px; padding: 7px 14px; box-shadow: var(--shadow); max-width: 100%; }
+.picker select:focus-visible { outline: 2px solid var(--coral); outline-offset: 2px; }
+
+/* Card */
+.card { background: var(--card); border-radius: 8px; box-shadow: var(--shadow-lg); padding: 24px 26px 20px; max-width: 560px; margin: 0 auto; }
+.card h3 { color: var(--coral); font-weight: 400; font-size: 1.6rem; letter-spacing: -.02em; line-height: 1.15; }
+.card .sci { color: var(--ink-2); font-style: italic; margin: 2px 0 14px; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0 0 14px; padding: 12px 0; border-block: 1px solid var(--bg-deep); }
+.facts div { display: flex; flex-direction: column; min-width: 0; }
+.facts b { font-family: var(--heading); font-weight: 500; font-size: 1.25rem; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.facts span { font-family: var(--heading); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
+.card p { font-size: .98rem; margin-bottom: .6em; }
+.card .src { font-size: .82rem; color: var(--ink-2); margin: 0; }
+.fam-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+
+/* Charts */
+.chart-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 6px; }
+.chart-head h3 { font-weight: 500; font-size: 1.05rem; }
+.seg { display: inline-flex; gap: 4px; background: var(--bg-deep); border-radius: 999px; padding: 3px; }
+.seg button { appearance: none; border: 0; background: none; font: 500 .82rem var(--heading); color: var(--ink-2); padding: 6px 14px; border-radius: 999px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
+.seg button:focus-visible { outline: 2px solid var(--coral); outline-offset: 2px; }
+svg.chart { display: block; width: 100%; height: auto; overflow: visible; }
+svg.chart text { font-family: var(--body); font-size: 12px; fill: var(--ink-2); }
+svg.chart .ann { font-style: italic; fill: var(--note); font-size: 12px; }
+.scroll-x { overflow-x: auto; }
+.scroll-x > svg { min-width: 640px; }
+.legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; font-family: var(--heading); font-size: .8rem; color: var(--ink-2); margin-top: 8px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+/* Notes */
+.notes { font-size: .88rem; color: var(--ink-2); line-height: 1.6; }
+.notes h3 { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); font-weight: 500; margin: 28px 0 8px; }
+.notes ul { padding-left: 18px; margin: 0; }
+.notes li { margin-bottom: 6px; }
+.notes a { overflow-wrap: anywhere; color: var(--ink-2); }
+@media (max-width: 560px) {
+  .hero { min-height: 460px; padding-block: 70px 30px; }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<header class="hero">
+  <svg class="flock" id="flock" viewBox="0 0 1100 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+  <h1>Spotting Butterflies</h1>
+  <div class="meta"><span>November 19, 2026</span><svg viewBox="-50 -40 100 80" id="meta-bf" aria-hidden="true"></svg><span>6 min read</span></div>
+  <div class="credit">Data from the Global Biodiversity Information Facility (GBIF)</div>
+</header>
+
+<main>
+  <div class="col">
+    <p class="lead">Somewhere in India right now, someone is crouched by a lantana bush with a phone, waiting for an orange-and-black butterfly to open its wings. When they share that photo, it becomes one of more than <strong id="grand">four lakh</strong> public records of butterflies in India.</p>
+    <p>Those records say a lot about butterflies. They say just as much about us: which species we notice, where we look, and when someone reminds us to go outside and count.</p>
+  </div>
+
+  <svg class="divider" id="div1" viewBox="0 0 640 90" aria-hidden="true"></svg>
+
+  <section class="part" aria-labelledby="p1">
+    <div class="col">
+      <div class="eyebrow">Part one <svg viewBox="-50 -40 100 80" class="eb" aria-hidden="true"></svg></div>
+      <h2 id="p1">The butterflies India records most</h2>
+      <p>Butterflies fall into a handful of families. The <em>brush-foots</em> are the big, showy group: tigers, crows, pansies. The <em>blues</em> are tiny and quick. <em>Whites and yellows</em> drift across fields, <em>swallowtails</em> carry long tails on their hindwings, and <em>skippers</em> dart about like moths.</p>
+      <p>In the flower below, each petal is a family, sized by how often it has been recorded in India. On each petal sit that family’s five most-recorded species, each drawn to the size of its record count. Tap one to meet it.</p>
+    </div>
+    <figure class="wide">
+      <div class="flower-wrap"><svg id="flower" viewBox="0 20 900 720" role="group" aria-label="Butterfly families as petals, with species sized by records"></svg></div>
+      <figcaption class="fig-note">Petal length and butterfly size both scale with the square root of the number of records, so area tracks records.</figcaption>
+    </figure>
+    <div class="picker"><label for="pick">Or choose a species</label><select id="pick"></select></div>
+    <article class="card" id="card" aria-live="polite"></article>
+  </section>
+
+  <svg class="divider" id="div2" viewBox="0 0 640 90" aria-hidden="true"></svg>
+
+  <section class="part" aria-labelledby="p2">
+    <div class="col">
+      <div class="eyebrow">Part two <svg viewBox="-50 -40 100 80" class="eb" aria-hidden="true"></svg></div>
+      <h2 id="p2">A year on the wing</h2>
+      <p>Every line below is one species, showing how its records spread across the year. The one you picked is drawn bold. Almost every line leaps in September, which makes it hard to see anything else.</p>
+      <p>Switch to <strong>versus all butterflies</strong> to divide out that shared jump. A value above 1 means the species is recorded more that month than butterflies in general. The Plain Tiger, for example, stands out in April.</p>
+    </div>
+    <figure class="wide">
+      <div class="chart-head">
+        <h3 id="curve-title">Share of each species’ records, by month</h3>
+        <div class="seg" role="group" aria-label="Chart mode">
+          <button type="button" id="mode-share" aria-pressed="true">Share of records</button>
+          <button type="button" id="mode-index" aria-pressed="false">Versus all butterflies</button>
+        </div>
+      </div>
+      <div class="scroll-x"><svg class="chart" id="curve" viewBox="0 0 900 360" role="img" aria-labelledby="curve-title"></svg></div>
+      <div class="legend" id="legend"></div>
+    </figure>
+  </section>
+
+  <svg class="divider" id="div3" viewBox="0 0 640 90" aria-hidden="true"></svg>
+
+  <section class="part" aria-labelledby="p3">
+    <div class="col">
+      <div class="eyebrow">Part three <svg viewBox="-50 -40 100 80" class="eb" aria-hidden="true"></svg></div>
+      <h2 id="p3">The September effect</h2>
+      <p>The weeks after the monsoon are a rich time for butterflies across much of India. But September is also <strong>Big Butterfly Month</strong>, a nationwide citizen-science count first held in 2020. Every family peaks that month, and records arrive in a rush when people are asked to look.</p>
+    </div>
+    <figure class="wide">
+      <div class="chart-head"><h3 id="cal-title">Share of each family’s records, by month</h3></div>
+      <div class="scroll-x"><svg class="chart" id="cal" viewBox="0 0 900 330" role="img" aria-labelledby="cal-title"></svg></div>
+    </figure>
+    <div class="col">
+      <p>The effect shows up across years too. Records of brush-footed butterflies more than doubled between 2019 and 2020, the year the count began, and have kept climbing since.</p>
+    </div>
+    <figure class="wide">
+      <div class="chart-head"><h3 id="yr-title">Brush-footed butterfly records in India, by year</h3></div>
+      <div class="scroll-x"><svg class="chart" id="years" viewBox="0 0 900 280" role="img" aria-labelledby="yr-title"></svg></div>
+    </figure>
+    <div class="col">
+      <p>None of this makes the records less useful. It means they show where people look and when, as well as where butterflies fly. Most of the work is in telling those two apart.</p>
+    </div>
+  </section>
+
+  <svg class="divider" id="div4" viewBox="0 0 640 90" aria-hidden="true"></svg>
+
+  <footer class="col notes">
+    <h3>Method</h3>
+    <ul>
+      <li>Records come from the GBIF occurrence API, filtered to country = India, pulled on 19 November 2026. Families: Papilionidae, Pieridae, Nymphalidae, Lycaenidae, Hesperiidae and Riodinidae.</li>
+      <li>Records are sightings, photographs and specimens shared to GBIF. They reflect observer effort as much as abundance, so easy-to-spot species near towns are over-represented.</li>
+      <li>Monthly totals are slightly below each species’ total because some records carry no month. The 2026 bar is a part year.</li>
+      <li>“Versus all butterflies” divides a species’ monthly share by the monthly share for all six families together.</li>
+      <li>English names were added by hand and should be checked against Butterflies of India before reuse.</li>
+      <li>Design inspired by <a href="https://searchingforbirds.visualcinnamon.com/" target="_blank" rel="noopener">Searching for Birds</a> by Visual Cinnamon. Butterfly drawings are original.</li>
+    </ul>
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://www.gbif.org/occurrence/search?country=IN&taxon_key=7017" target="_blank" rel="noopener">GBIF occurrence search, India</a></li>
+      <li><a href="https://www.gbif.org/dataset/eabda349-af5e-4c55-a4c6-fdf844cc9260" target="_blank" rel="noopener">Big Butterfly Month Counts 2020 (GBIF dataset)</a></li>
+      <li><a href="https://etvbharat.com/english/bharat/bharat-news/in-a-first-india-observes-big-butterfly-month/na20201001172847720" target="_blank" rel="noopener">“In a first, India observes Big Butterfly Month”, ETV Bharat, 2020</a></li>
+      <li><a href="https://www.ifoundbutterflies.org/outreach" target="_blank" rel="noopener">Butterflies of India, outreach</a></li>
+    </ul>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var FAM = {
+    Nymphalidae:  { name: "Brush-foots", c1: "#ff923e", c2: "#f9564e", line: "#f07a2a", total: 182672, months: [7861,6690,7017,11112,9858,11439,14587,16241,40887,22144,15291,10837] },
+    Lycaenidae:   { name: "Blues", c1: "#51aade", c2: "#2ac7c7", line: "#3d97cf", total: 93280, months: [6018,4660,5523,7622,5932,6449,7407,7098,17548,9248,6963,6591] },
+    Pieridae:     { name: "Whites & yellows", c1: "#ffcc2d", c2: "#98cb5f", line: "#e0a800", total: 59522, months: [2660,1829,2102,3593,3537,4271,5770,5177,14325,5684,4247,3478] },
+    Papilionidae: { name: "Swallowtails", c1: "#3a4178", c2: "#f9564e", line: "#3a4178", total: 55968, months: [1570,1419,2535,4065,3609,4517,5700,5419,11978,5287,2766,2013] },
+    Hesperiidae:  { name: "Skippers", c1: "#ccaf91", c2: "#80766b", line: "#a88a6a", total: 35615, months: [1529,1067,1171,1837,1543,2477,3124,3836,9247,4471,2536,1539] },
+    Riodinidae:   { name: "Metalmarks", c1: "#ffa7b4", c2: "#f9564e", line: "#ef7d8f", total: 1542, months: [34,27,126,143,96,56,50,86,454,157,174,79] }
+  };
+  var ORDER = ["Nymphalidae","Lycaenidae","Pieridae","Papilionidae","Hesperiidae","Riodinidae"];
+  var SP = [
+    [1938088,"Papilio polytes","Common Mormon","Papilionidae",11276,[351,351,497,788,588,864,1092,1173,2879,1251,763,506]],
+    [1938069,"Papilio demoleus","Lime Swallowtail","Papilionidae",8002,[163,160,230,586,568,1091,1321,886,1702,641,391,183]],
+    [5141187,"Graphium agamemnon","Tailed Jay","Papilionidae",4766,[193,128,148,326,276,394,495,544,1147,455,292,292]],
+    [5141226,"Graphium doson","Common Jay","Papilionidae",4295,[86,144,322,516,311,315,459,458,998,317,160,133]],
+    [1939168,"Pachliopta aristolochiae","Common Rose","Papilionidae",3117,[163,107,145,148,162,176,284,268,901,297,153,221]],
+    [1919340,"Catopsilia pomona","Common Emigrant","Pieridae",8116,[282,178,262,487,530,772,906,970,2233,661,348,267]],
+    [5137849,"Eurema hecabe","Common Grass Yellow","Pieridae",7495,[349,187,179,270,199,383,672,647,2499,888,603,443]],
+    [1919348,"Catopsilia pyranthe","Mottled Emigrant","Pieridae",4402,[135,72,54,150,253,346,536,488,1344,457,281,172]],
+    [1919741,"Cepora nerissa","Common Gull","Pieridae",4252,[190,148,163,345,279,401,409,305,999,384,321,233]],
+    [5137861,"Leptosia nina","Psyche","Pieridae",3595,[253,218,160,197,212,161,230,271,840,344,363,315]],
+    [7642610,"Danaus chrysippus","Plain Tiger","Nymphalidae",12644,[436,532,502,1609,1038,984,1000,1056,2724,1325,804,511]],
+    [5130521,"Junonia lemonias","Lemon Pansy","Nymphalidae",9356,[310,316,263,483,480,766,1115,1024,2533,931,611,475]],
+    [5130444,"Junonia iphita","Chocolate Pansy","Nymphalidae",8507,[324,284,306,470,414,571,759,835,2221,1043,670,507]],
+    [5136713,"Euploea core","Common Crow","Nymphalidae",8192,[330,333,263,481,476,523,731,878,2159,907,596,402]],
+    [1910629,"Hypolimnas bolina","Great Eggfly","Nymphalidae",7949,[176,230,263,251,281,453,784,990,2554,1103,486,272]],
+    [1932607,"Castalius rosimon","Common Pierrot","Lycaenidae",6782,[506,295,256,395,291,434,569,620,1617,790,491,500]],
+    [1928915,"Jamides celeno","Common Cerulean","Lycaenidae",4320,[427,217,172,302,138,236,291,235,787,581,439,458]],
+    [1933679,"Talicada nyseus","Red Pierrot","Lycaenidae",3865,[237,209,261,329,248,229,269,374,740,380,270,301]],
+    [5806412,"Leptotes plinius","Zebra Blue","Lycaenidae",3646,[246,281,388,422,211,165,206,186,685,336,232,271]],
+    [10581870,"Luthrodes pandava","Plains Cupid","Lycaenidae",3490,[95,183,322,480,323,352,366,264,543,219,185,153]],
+    [1946917,"Iambrix salsala","Chestnut Bob","Hesperiidae",2561,[130,61,84,166,111,227,236,273,608,383,172,97]],
+    [4689929,"Suastus gremius","Indian Palm Bob","Hesperiidae",2201,[131,70,71,116,110,210,295,272,456,166,157,125]],
+    [1949336,"Udaspes folus","Grass Demon","Hesperiidae",2128,[22,31,44,83,83,141,234,337,721,274,98,38]],
+    [1945225,"Hasora chromus","Common Banded Awl","Hesperiidae",1794,[107,54,78,156,76,202,169,203,404,177,97,49]],
+    [1942808,"Sarangesa dasahara","Common Small Flat","Hesperiidae",1399,[95,26,41,95,48,130,93,154,367,208,72,53]],
+    [1935849,"Zemeros flegyas","Punchinello","Riodinidae",1198,[31,23,84,90,61,45,31,78,409,130,117,67]]
+  ].map(function (r) { return { key: r[0], sci: r[1], common: r[2], fam: r[3], total: r[4], months: r[5] }; });
+  var YEARS = { 2010:641, 2011:1417, 2012:1958, 2013:2156, 2014:2473, 2015:2778, 2016:3110, 2017:4190, 2018:5405, 2019:6549, 2020:14867, 2021:13932, 2022:16142, 2023:18186, 2024:19911, 2025:27085, 2026:27828 };
+
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  function sum(a) { return a.reduce(function (s, x) { return s + x; }, 0); }
+  function share(a) { var t = sum(a); return a.map(function (x) { return x / t; }); }
+  function fmt(n) { return n.toLocaleString("en-IN"); }
+  function pct(x) { return Math.round(x * 100) + "%"; }
+  var ALL = MONTHS.map(function (_, i) { return ORDER.reduce(function (s, f) { return s + FAM[f].months[i]; }, 0); });
+  var ALL_SHARE = share(ALL);
+  var GRAND = ORDER.reduce(function (s, f) { return s + FAM[f].total; }, 0);
+  document.getElementById("grand").textContent = fmt(GRAND);
+
+  // ---------- Butterfly drawing (original, in a 100 x 80 box) ----------
+  var KIND = { Papilionidae: "tail", Lycaenidae: "thin", Hesperiidae: "skip", Riodinidae: "round", Pieridae: "round", Nymphalidae: "plain" };
+  function butterfly(parent, fam, x, y, span, rot) {
+    var f = FAM[fam], k = KIND[fam], s = span / 100;
+    var g = el("g", { transform: "translate(" + x + " " + y + ") rotate(" + (rot || 0) + ") scale(" + s + ")" }, parent);
+    var sx = k === "skip" ? 0.82 : 1;
+    [-1, 1].forEach(function (side) {
+      var w = el("g", { transform: "scale(" + (side * sx) + " 1)" }, g);
+      if (k === "tail") el("path", { d: "M-25 30 C-28 40 -29 47 -25 54", stroke: f.c1, "stroke-width": 5, "stroke-linecap": "round", fill: "none" }, w);
+      if (k === "thin") el("path", { d: "M-15 33 C-17 39 -18 43 -17 47", stroke: f.c1, "stroke-width": 1.6, "stroke-linecap": "round", fill: "none" }, w);
+      var hind = k === "round" ? "M-2 2 C-26 2 -42 16 -35 30 C-28 42 -8 34 -2 12 Z" : "M-2 2 C-24 2 -40 14 -34 28 C-28 40 -10 34 -2 12 Z";
+      el("path", { d: hind, fill: f.c1 }, w);
+      el("path", { d: "M-6 8 C-18 9 -28 16 -26 24 C-24 30 -12 26 -6 14 Z", fill: f.c2, "fill-opacity": 0.75 }, w);
+      var fore = k === "round" ? "M-2 -6 C-12 -36 -46 -40 -50 -22 C-53 -6 -34 2 -2 2 Z" : "M-2 -6 C-12 -34 -44 -40 -49 -24 C-53 -10 -36 0 -2 2 Z";
+      el("path", { d: fore, fill: f.c1 }, w);
+      el("path", { d: "M-7 -6 C-15 -26 -35 -31 -39 -21 C-41 -13 -29 -6 -7 -2 Z", fill: f.c2, "fill-opacity": 0.85 }, w);
+      el("path", { d: "M-3 -4 C-14 -16 -26 -20 -40 -22 M-3 0 C-16 -6 -30 -8 -44 -14", stroke: "#28211e", "stroke-opacity": 0.18, "stroke-width": 1.1, fill: "none" }, w);
+      el("circle", { cx: -43, cy: -25, r: 3.2, fill: "#f4efe5" }, w);
+      el("circle", { cx: -36, cy: -31, r: 2.4, fill: "#f4efe5" }, w);
+      el("circle", { cx: -45, cy: -16, r: 2, fill: "#f4efe5" }, w);
+      el("path", { d: "M-1 -19 C-5 -30 -10 -36 -15 -39", stroke: "#28211e", "stroke-width": 1.3, fill: "none", "stroke-linecap": "round" }, w);
+      el("circle", { cx: -15, cy: -39, r: 2, fill: "#28211e" }, w);
+    });
+    el("ellipse", { cx: 0, cy: 5, rx: k === "skip" ? 4.4 : 3.2, ry: 21, fill: "#28211e" }, g);
+    el("circle", { cx: 0, cy: -17, r: 3.8, fill: "#28211e" }, g);
+    return g;
+  }
+
+  // Hero flock
+  (function () {
+    var svg = document.getElementById("flock");
+    [["Nymphalidae", 140, 110, 190, -24], ["Papilionidae", 960, 120, 200, 22], ["Pieridae", 70, 400, 150, 18],
+     ["Lycaenidae", 1030, 410, 150, -16], ["Hesperiidae", 300, 500, 110, 30], ["Riodinidae", 820, 520, 115, -30],
+     ["Lycaenidae", 360, 60, 80, 12], ["Pieridae", 760, 60, 90, -10]].forEach(function (b) { butterfly(svg, b[0], b[1], b[2], b[3], b[4]); });
+    butterfly(document.getElementById("meta-bf"), "Papilionidae", 0, 0, 100, 0);
+    document.querySelectorAll("svg.eb").forEach(function (s, i) { butterfly(s, ORDER[i % ORDER.length], 0, 0, 100, 0); });
+    ["div1", "div2", "div3", "div4"].forEach(function (id, j) {
+      var s = document.getElementById(id);
+      [0, 1, 2, 3].forEach(function (i) {
+        var fam = ORDER[(i + j * 2) % 5];
+        butterfly(s, fam, 90 + i * 155, 45 + (i % 2 ? 6 : -6), 78 - (i % 2) * 14, (i % 2 ? 1 : -1) * (14 + j * 3));
+      });
+    });
+  })();
+
+  // ---------- Flower ----------
+  var flower = document.getElementById("flower");
+  var CX = 450, CY = 450;
+  var maxF = FAM.Nymphalidae.total, maxT = 12644;
+  var ANG = { Nymphalidae: -90, Pieridae: -30, Hesperiidae: 30, Riodinidae: 90, Lycaenidae: 150, Papilionidae: 210 };
+  var nodes = {};
+  ORDER.forEach(function (fam) {
+    var f = FAM[fam], a = ANG[fam], L = 175 + 185 * Math.sqrt(f.total / maxF), W = 0.48 * L;
+    var d = "M0 0 C" + (W * 0.9) + " " + (-L * 0.25) + " " + (W * 0.8) + " " + (-L * 0.85) + " 0 " + (-L) +
+            " C" + (-W * 0.8) + " " + (-L * 0.85) + " " + (-W * 0.9) + " " + (-L * 0.25) + " 0 0 Z";
+    var g = el("g", { transform: "translate(" + CX + " " + CY + ") rotate(" + (a + 90) + ")" }, flower);
+    el("path", { d: d, fill: f.c1, "fill-opacity": 0.2, stroke: f.c1, "stroke-opacity": 0.55, "stroke-width": 2 }, g);
+    el("path", { d: "M0 -40 L0 " + (-L + 14), stroke: f.c1, "stroke-opacity": 0.35, "stroke-width": 1.5, "stroke-dasharray": "2 5" }, g);
+    f.L = L; f.W = W;
+  });
+  // Labels outside the tips
+  ORDER.forEach(function (fam) {
+    var f = FAM[fam], r = (ANG[fam]) * Math.PI / 180, dist = f.L + 34;
+    var lx = CX + dist * Math.cos(r), ly = CY + dist * Math.sin(r);
+    var anchor = Math.abs(Math.cos(r)) < 0.2 ? "middle" : (Math.cos(r) > 0 ? "start" : "end");
+    var t = el("text", { x: lx, y: ly, "text-anchor": anchor, "font-size": 21, "font-weight": 700, fill: "#28211e" }, flower);
+    t.textContent = f.name;
+    var t2 = el("text", { x: lx, y: ly + 20, "text-anchor": anchor, "font-size": 14, fill: "#80766b", style: "font-family: var(--body); font-style: italic" }, flower);
+    t2.textContent = fmt(f.total) + " records";
+  });
+  // Centre disc
+  el("circle", { cx: CX, cy: CY, r: 50, fill: "#ffcc2d" }, flower);
+  for (var i = 0; i < 26; i++) {
+    var ang = i * 137.5 * Math.PI / 180, rr = 5.6 * Math.sqrt(i + 1);
+    el("circle", { cx: CX + rr * Math.cos(ang), cy: CY + rr * Math.sin(ang), r: 2.6, fill: "#e0a800" }, flower);
+  }
+  // Butterflies on petals
+  ORDER.forEach(function (fam) {
+    var f = FAM[fam], r = ANG[fam] * Math.PI / 180;
+    var list = SP.filter(function (s) { return s.fam === fam; }).sort(function (a, b) { return a.total - b.total; });
+    var n = list.length;
+    list.forEach(function (s, i) {
+      var t = n === 1 ? 0.6 : 0.32 + 0.52 * i / (n - 1);
+      var off = n === 1 ? 0 : (i % 2 ? 1 : -1) * f.W * 0.2;
+      var x = CX + t * f.L * Math.cos(r) - off * Math.sin(r);
+      var y = CY + t * f.L * Math.sin(r) + off * Math.cos(r);
+      var span = 34 + 50 * Math.sqrt(s.total / maxT);
+      var g = el("g", { class: "bf", tabindex: 0, role: "button", "aria-label": s.common + ", " + fmt(s.total) + " records" }, flower);
+      el("circle", { class: "ring", cx: x, cy: y, r: span * 0.62, fill: "#ffffff", "fill-opacity": 0.7, stroke: "#f9564e", "stroke-width": 2, "stroke-dasharray": "4 4" }, g);
+      butterfly(g, fam, x, y, span, (i % 2 ? 1 : -1) * 8);
+      var tt = el("title", {}, g); tt.textContent = s.common + " · " + fmt(s.total) + " records";
+      g.addEventListener("click", function () { select(s); });
+      g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(s); } });
+      nodes[s.key] = { g: g, x: x, y: y, span: span };
+    });
+  });
+  var selLabel = el("g", { "pointer-events": "none" }, flower);
+
+  // Picker
+  var pick = document.getElementById("pick");
+  ORDER.forEach(function (fam) {
+    var og = document.createElement("optgroup"); og.label = FAM[fam].name;
+    SP.filter(function (s) { return s.fam === fam; }).sort(function (a, b) { return b.total - a.total; }).forEach(function (s) {
+      var o = document.createElement("option"); o.value = s.key; o.textContent = s.common; og.appendChild(o);
+    });
+    pick.appendChild(og);
+  });
+  pick.addEventListener("change", function () { select(SP.filter(function (s) { return s.key === +pick.value; })[0]); });
+
+  // ---------- Selection ----------
+  var current = null, mode = "share";
+  function argmax(a, skip) { var m = -1, v = -Infinity; a.forEach(function (x, i) { if (i !== skip && x > v) { v = x; m = i; } }); return m; }
+  function select(s) {
+    current = s; pick.value = s.key;
+    Object.keys(nodes).forEach(function (k) { nodes[k].g.classList.toggle("sel", +k === s.key); });
+    var n = nodes[s.key];
+    while (selLabel.firstChild) selLabel.removeChild(selLabel.firstChild);
+    var lab = el("text", { x: n.x, y: n.y + n.span * 0.62 + 20, "text-anchor": "middle", "font-size": 16, "font-weight": 500, fill: "#28211e", stroke: "#f4efe5", "stroke-width": 5, "paint-order": "stroke" }, selLabel);
+    lab.textContent = s.common;
+    flower.appendChild(selLabel);
+    var sh = share(s.months), idx = sh.map(function (x, i) { return x / ALL_SHARE[i]; });
+    var peakOff = argmax(sh, 8), over = argmax(idx), under = idx.indexOf(Math.min.apply(null, idx));
+    var rank = SP.slice().sort(function (a, b) { return b.total - a.total; }).indexOf(s) + 1;
+    var f = FAM[s.fam];
+    document.getElementById("card").innerHTML =
+      "<h3>" + s.common + "</h3>" +
+      '<div class="sci"><em>' + s.sci + '</em> · <span class="fam-dot" style="background:' + f.c1 + '"></span>' + f.name + "</div>" +
+      '<div class="facts">' +
+        "<div><b>" + fmt(s.total) + "</b><span>records</span></div>" +
+        "<div><b>#" + rank + "</b><span>of 26 here</span></div>" +
+        "<div><b>" + MONTHS[peakOff] + "</b><span>busiest month after Sep</span></div>" +
+      "</div>" +
+      "<p>Compared with butterflies in general, the " + s.common + " is recorded most in <strong>" + MONTHS[over] + "</strong> (×" + idx[over].toFixed(2) +
+      ") and least in <strong>" + MONTHS[under] + "</strong> (×" + idx[under].toFixed(2) + "). " +
+      (idx[8] < 1 ? "It gets less of a boost from the September count than most species." : "It gets more of a boost from the September count than most species.") + "</p>" +
+      '<p class="src"><a href="https://www.gbif.org/species/' + s.key + '" target="_blank" rel="noopener">See this species on GBIF</a></p>';
+    drawCurve();
+  }
+
+  // ---------- Curves ----------
+  function drawCurve() {
+    var svg = document.getElementById("curve");
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    var W = 900, H = 360, L = 54, R = 120, T = 22, B = 34;
+    var series = SP.map(function (s) { var sh = share(s.months); return { s: s, v: mode === "share" ? sh : sh.map(function (x, i) { return x / ALL_SHARE[i]; }) }; });
+    var top = Math.max.apply(null, series.map(function (d) { return Math.max.apply(null, d.v); }));
+    var yMax = mode === "share" ? Math.ceil(top * 20) / 20 : Math.ceil(top * 2) / 2;
+    var step = mode === "share" ? 0.05 : 0.5;
+    var x = function (i) { return L + i * (W - L - R) / 11; };
+    var y = function (v) { return T + (H - T - B) * (1 - v / yMax); };
+    var bw = (W - L - R) / 11;
+    el("rect", { x: x(8) - bw * 0.45, y: T - 6, width: bw * 0.9, height: H - T - B + 6, fill: "var(--band)", rx: 3 }, svg);
+    var a = el("text", { x: x(8), y: T - 10, "text-anchor": "middle", class: "ann" }, svg); a.textContent = "Big Butterfly Month";
+    for (var t = 0; t <= yMax + 1e-9; t += step) {
+      el("line", { x1: L, x2: W - R, y1: y(t), y2: y(t), stroke: "#e7decd", "stroke-width": 1 }, svg);
+      var tx = el("text", { x: L - 10, y: y(t) + 4, "text-anchor": "end" }, svg);
+      tx.textContent = mode === "share" ? Math.round(t * 100) + "%" : "×" + t.toFixed(1);
+    }
+    if (mode === "index") el("line", { x1: L, x2: W - R, y1: y(1), y2: y(1), stroke: "#80766b", "stroke-width": 1.2, "stroke-dasharray": "4 4" }, svg);
+    MONTHS.forEach(function (m, i) { var tx = el("text", { x: x(i), y: H - 10, "text-anchor": "middle" }, svg); tx.textContent = m; });
+    var path = function (v) { return v.map(function (p, i) { return (i ? "L" : "M") + x(i).toFixed(1) + " " + y(p).toFixed(1); }).join(" "); };
+    var curvy = function (v) {
+      var pts = v.map(function (p, i) { return [x(i), y(p)]; }), d = "M" + pts[0][0] + " " + pts[0][1];
+      for (var i = 1; i < pts.length; i++) { var mx = (pts[i - 1][0] + pts[i][0]) / 2; d += " C" + mx + " " + pts[i - 1][1] + " " + mx + " " + pts[i][1] + " " + pts[i][0] + " " + pts[i][1]; }
+      return d;
+    };
+    series.forEach(function (d) {
+      if (d.s === current) return;
+      var p = el("path", { d: curvy(d.v), fill: "none", stroke: FAM[d.s.fam].line, "stroke-opacity": 0.28, "stroke-width": 1.6, style: "cursor:pointer" }, svg);
+      var tt = el("title", {}, p); tt.textContent = d.s.common;
+      p.addEventListener("click", function () { select(d.s); });
+    });
+    var cur = series.filter(function (d) { return d.s === current; })[0];
+    var col = FAM[current.fam].line;
+    el("path", { d: curvy(cur.v), fill: "none", stroke: "#f4efe5", "stroke-width": 7 }, svg);
+    el("path", { d: curvy(cur.v), fill: "none", stroke: col, "stroke-width": 3.4 }, svg);
+    cur.v.forEach(function (v, i) {
+      var c = el("circle", { cx: x(i), cy: y(v), r: 4.2, fill: col, stroke: "#f4efe5", "stroke-width": 2 }, svg);
+      var tt = el("title", {}, c); tt.textContent = MONTHS[i] + ": " + fmt(current.months[i]) + " records" + (mode === "index" ? ", ×" + v.toFixed(2) : ", " + pct(v));
+    });
+    var end = el("text", { x: x(11) + 12, y: y(cur.v[11]) + 5, "font-size": 14, fill: col, style: "font-family: var(--heading); font-weight: 500" }, svg);
+    end.textContent = current.common;
+    if (mode === "index") { var one = el("text", { x: W - R + 12, y: y(1) + 4, class: "ann" }, svg); one.textContent = "same as average"; }
+    document.getElementById("curve-title").textContent = mode === "share" ? "Share of each species’ records, by month" : "Each species compared with all butterflies, by month";
+  }
+  ["share", "index"].forEach(function (m) {
+    document.getElementById("mode-" + m).addEventListener("click", function () {
+      mode = m;
+      document.getElementById("mode-share").setAttribute("aria-pressed", String(m === "share"));
+      document.getElementById("mode-index").setAttribute("aria-pressed", String(m === "index"));
+      drawCurve();
+    });
+  });
+  var leg = document.getElementById("legend");
+  ORDER.forEach(function (fam) { var s = document.createElement("span"); s.innerHTML = '<span class="fam-dot" style="background:' + FAM[fam].c1 + '"></span>' + FAM[fam].name; leg.appendChild(s); });
+
+  // ---------- Calendar (bubbles) ----------
+  (function () {
+    var svg = document.getElementById("cal"), W = 900, L = 160, R = 20, T = 34, rowH = 48;
+    var x = function (i) { return L + (i + 0.5) * (W - L - R) / 12; };
+    var cw = (W - L - R) / 12;
+    el("rect", { x: x(8) - cw / 2 + 3, y: 6, width: cw - 6, height: T + rowH * 6 - 6, fill: "var(--band)", rx: 4 }, svg);
+    MONTHS.forEach(function (m, i) { var t = el("text", { x: x(i), y: 22, "text-anchor": "middle", style: i === 8 ? "fill:#f9564e;font-weight:600" : "" }, svg); t.textContent = m; });
+    var maxS = Math.max.apply(null, ORDER.map(function (f) { return Math.max.apply(null, share(FAM[f].months)); }));
+    ORDER.forEach(function (fam, r) {
+      var f = FAM[fam], sh = share(f.months), cy = T + rowH * r + rowH / 2;
+      el("circle", { cx: 14, cy: cy, r: 6, fill: f.c1 }, svg);
+      var lbl = el("text", { x: 28, y: cy + 5, style: "font-family: var(--heading); font-size: 15px; fill: #28211e" }, svg); lbl.textContent = f.name;
+      el("line", { x1: L, x2: W - R, y1: cy, y2: cy, stroke: "#e7decd" }, svg);
+      sh.forEach(function (v, i) {
+        var c = el("circle", { cx: x(i), cy: cy, r: Math.max(2, 21 * Math.sqrt(v / maxS)), fill: f.c1, "fill-opacity": i === 8 ? 1 : 0.8 }, svg);
+        var tt = el("title", {}, c); tt.textContent = f.name + ", " + MONTHS[i] + ": " + pct(v) + " of records (" + fmt(f.months[i]) + ")";
+        if (i === 8) { var t = el("text", { x: x(i), y: cy + 4, "text-anchor": "middle", style: "font-size: 11px; font-weight: 600; fill: " + (fam === "Papilionidae" ? "#ffffff" : "#28211e") }, svg); t.textContent = pct(v); }
+      });
+    });
+  })();
+
+  // ---------- Years ----------
+  (function () {
+    var svg = document.getElementById("years"), W = 900, H = 280, L = 54, R = 20, T = 30, B = 32;
+    var yrs = Object.keys(YEARS).map(Number), yMax = 30000, bw = (W - L - R) / yrs.length;
+    var y = function (v) { return T + (H - T - B) * (1 - v / yMax); };
+    [0, 10000, 20000, 30000].forEach(function (t) {
+      el("line", { x1: L, x2: W - R, y1: y(t), y2: y(t), stroke: "#e7decd" }, svg);
+      var tx = el("text", { x: L - 10, y: y(t) + 4, "text-anchor": "end" }, svg); tx.textContent = t ? (t / 1000) + "k" : "0";
+    });
+    yrs.forEach(function (yr, i) {
+      var h = y(0) - y(YEARS[yr]), bx = L + i * bw + bw * 0.18, w = bw * 0.64;
+      var r = el("path", { d: "M" + bx + " " + y(0) + " V" + (y(YEARS[yr]) + 6) + " Q" + bx + " " + y(YEARS[yr]) + " " + (bx + 6) + " " + y(YEARS[yr]) + " H" + (bx + w - 6) + " Q" + (bx + w) + " " + y(YEARS[yr]) + " " + (bx + w) + " " + (y(YEARS[yr]) + 6) + " V" + y(0) + " Z",
+        fill: yr === 2020 ? "#f9564e" : "#ff923e", "fill-opacity": yr === 2026 ? 0.45 : (yr === 2020 ? 1 : 0.75) }, svg);
+      var tt = el("title", {}, r); tt.textContent = yr + ": " + fmt(YEARS[yr]) + " records" + (yr === 2026 ? " (part year)" : "");
+      var tx = el("text", { x: bx + w / 2, y: H - 10, "text-anchor": "middle" }, svg); tx.textContent = "’" + String(yr).slice(2);
+    });
+    var i20 = yrs.indexOf(2020), ax = L + i20 * bw + bw / 2;
+    var a = el("text", { x: ax - 14, y: y(YEARS[2020]) - 30, "text-anchor": "end", class: "ann" }, svg); a.textContent = "2020: the first Big Butterfly Month";
+    el("path", { d: "M" + (ax - 12) + " " + (y(YEARS[2020]) - 26) + " Q" + (ax - 4) + " " + (y(YEARS[2020]) - 22) + " " + ax + " " + (y(YEARS[2020]) - 8), stroke: "#68594f", fill: "none", "stroke-width": 1 }, svg);
+    var i26 = yrs.indexOf(2026), p = el("text", { x: L + i26 * bw + bw / 2, y: y(YEARS[2026]) - 8, "text-anchor": "middle", class: "ann" }, svg); p.textContent = "part year";
+  })();
+
+  select(SP.filter(function (s) { return s.key === 7642610; })[0]);
+})();
+</script>
+
+</body></html>
